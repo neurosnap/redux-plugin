@@ -134,6 +134,7 @@ import { sagaMiddleware } from 'redux-saga';
 import { Provider } from 'react-redux';
 import { use, Provider as PluginProvider } from 'redux-plugin';
 
+import App from './app';
 import moduleA from './moduleA';
 import moduleB from './moduleB';
 
