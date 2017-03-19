@@ -123,7 +123,7 @@ const mapDispatchToProps = (dispatch, { actionCreators }) => ({
   add: (text) => dispatch(actionCreators.add(text)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(add);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
 ```
 
 index.js
