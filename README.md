@@ -148,8 +148,11 @@ const reducer = combineReducers(modules.reducers);
 // initialize store
 const store = createStore(reducer, {}, enhancer);
 
+// create root saga
+const saga = sagaCreator(modules);
+
 // initialize sagas
-sagaMiddleware.run(sagaCreator(modules));
+sagaMiddleware.run(saga);
 
 // render app with providers
 reactDOM.render(
