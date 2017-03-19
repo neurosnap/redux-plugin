@@ -11,6 +11,7 @@
   "dependencies": {
     "react": "^15.4.2",
     "react-redux": "^5.0.3",
-    "recompose": "^0.22.0"
+    "recompose": "^0.22.0",
+    "redux-saga": "^0.14.3"
   }
 }

@@ -1,1 +1,1 @@
-export { use, Provider, connect } from './src';
+export { use, Provider, connect, sagaCreator } from './src';

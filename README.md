@@ -132,7 +132,7 @@ index.js
 import { createStore, compose, applyMiddleware, combineReducers } from 'redux';
 import { sagaMiddleware } from 'redux-saga';
 import { Provider } from 'react-redux';
-import { use, Provider as PluginProvider } from 'redux-plugin';
+import { use, Provider as PluginProvider, sagaCreator } from 'redux-plugin';
 
 import App from './app';
 import moduleA from './moduleA';
@@ -148,19 +148,8 @@ const reducer = combineReducers(modules.reducers);
 // initialize store
 const store = createStore(reducer, {}, enhancer);
 
-// saga helper
-const prepSagas = (sagas, modules) => Object
-  .values(sagas)
-  .map((saga) => spawn(saga, modules));
-
-// create root saga
-const saga = function* (modules) {
-  const { sagas, ...others } = modules;
-  yield prepSagas(sagas, others);
-}
-
 // initialize sagas
-sagaMiddleware.run(saga);
+sagaMiddleware.run(sagaCreator(modules));
 
 // render app with providers
 reactDOM.render(
